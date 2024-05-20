@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplicación de Tensores</title>
+  </head>
+  <body>
+    <script>
+      // Función para crear un tensor de tamaño 10x10 con números del 1 al 9
+      function createTensor() {
+        let tensor = [];
+        for (let i = 1; i <= 10; i++) {
+          let row = [];
+          for (let j = 1; j <= 10; j++) {
+            row.push(i * j);
+          }
+          tensor.push(row);
+        }
+        return tensor;
+      }
+
+      // Función para multiplicar dos tensores
+      function multiplyTensors(tensor1, tensor2) {
+        let result = [];
+        for (let i = 0; i < 10; i++) {
+          let row = [];
+          for (let j = 0; j < 10; j++) {
+            let sum = 0;
+            for (let k = 0; k < 10; k++) {
+              sum += tensor1[i][k] * tensor2[k][j];
+            }
+            row.push(sum);
+          }
+          result.push(row);
+        }
+        return result;
+      }
+
+      // Crear los tensores iniciales
+      let tensor1 = createTensor();
+      let tensor2 = createTensor();
+
+      // Multiplicar los tensores hasta que el tamaño del tensor resultante sea mayor a 64MB
+      while (JSON.stringify(tensor1).length < 1 * 1024 * 1024) {
+        tensor1 = multiplyTensors(tensor1, tensor2);
+      }
+
+      // Imprimir el tensor resultante en la consola del navegador
+      console.log(tensor1);
+
+      // Limpiar la memoria
+      tensor1 = null;
+      tensor2 = null;
+    </script>
+  </body>
+</html>

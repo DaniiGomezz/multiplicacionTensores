@@ -1,0 +1,20 @@
+#cajaResultados {
+    background-color: #f0f0f0; /* Color de fondo */
+    border: 1px solid #ccc; /* Borde */
+    padding: 20px; /* Relleno */
+    margin-top: 20px; /* Margen superior */
+    overflow: auto; /* Control de desbordamiento */
+}
+
+#matrizResultado {
+    font-family: Arial, sans-serif; /* Familia de fuente */
+    font-size: 16px; /* Tamaño de fuente */
+    color: #333; /* Color de texto */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+#numIteraciones {
+    font-family: Arial, sans-serif; /* Familia de fuente */
+    font-size: 14px; /* Tamaño de fuente */
+    color: #666; /* Color de texto */
+}
